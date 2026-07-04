@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI 콘텐츠 공모전 레이더 2026</title>
+  <style>
+    :root{--bg:#f7f8fb;--panel:#fff;--panel2:#f1f4f8;--text:#111827;--muted:#667085;--line:#e5e7eb;--soft:#f8fafc;--point:#ff3c3c;--blue:#2563eb;--green:#16a34a;--amber:#d97706;--shadow:0 20px 60px rgba(15,23,42,.08)}
+    *{box-sizing:border-box} body{margin:0;background:linear-gradient(180deg,#fff 0,#f6f7fb 58%,#eef2f7 100%);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Pretendard","Apple SD Gothic Neo","Segoe UI",sans-serif} a{color:inherit;text-decoration:none} .wrap{max-width:1280px;margin:0 auto;padding:34px 18px 90px}
+    .hero{display:grid;grid-template-columns:1.25fr .75fr;gap:22px;align-items:end;margin-bottom:20px} .eyebrow{display:inline-flex;gap:8px;align-items:center;border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 13px;color:var(--muted);font-size:13px;box-shadow:var(--shadow)} .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 5px rgba(22,163,74,.12)} h1{font-size:clamp(38px,7vw,76px);letter-spacing:-.075em;line-height:.9;margin:20px 0 16px} .lead{color:#475467;font-size:17px;line-height:1.68;max-width:820px} .heroActions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px} .pillbtn{border:1px solid var(--line);background:#fff;border-radius:999px;padding:10px 14px;font-weight:800;font-size:13px;box-shadow:0 10px 30px rgba(15,23,42,.06);cursor:pointer}
+    .statbox{display:grid;grid-template-columns:repeat(2,1fr);gap:12px} .stat{background:rgba(255,255,255,.88);border:1px solid var(--line);border-radius:22px;padding:18px;box-shadow:var(--shadow)} .stat b{display:block;font-size:31px;letter-spacing:-.04em} .stat span{display:block;color:var(--muted);font-size:13px;margin-top:4px}
+    .toolbar{position:sticky;top:0;z-index:5;backdrop-filter:blur(18px);background:rgba(247,248,251,.82);border:1px solid var(--line);border-radius:24px;padding:14px;margin:22px 0;display:grid;grid-template-columns:1fr auto;gap:12px;box-shadow:0 16px 45px rgba(15,23,42,.08)} .search{width:100%;background:#fff;border:1px solid var(--line);border-radius:16px;color:var(--text);padding:14px 15px;font-size:15px;outline:none} .filters{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end} .chip{border:1px solid var(--line);background:#fff;color:#344054;border-radius:999px;padding:12px 14px;font-weight:800;font-size:13px;cursor:pointer} .chip.active{background:#111827;border-color:#111827;color:white} .chip.sub.active{background:var(--point);border-color:var(--point)} .controls{display:flex;align-items:center;gap:10px;color:#667085;font-size:13px;margin:-8px 2px 18px;flex-wrap:wrap}.select{border:1px solid var(--line);background:#fff;border-radius:999px;color:#344054;font-weight:800;padding:10px 12px;outline:none}.miniBtn{border:1px solid var(--line);background:#fff;border-radius:999px;color:#344054;font-weight:800;padding:10px 12px;cursor:pointer}.switch{display:inline-flex;align-items:center;gap:8px;cursor:pointer} .switch input{accent-color:#111827}
+    .insights{display:grid;grid-template-columns:1.1fr .9fr .9fr;gap:14px;margin-bottom:18px}.insight{background:#fff;border:1px solid var(--line);border-radius:22px;padding:17px 18px;box-shadow:0 12px 32px rgba(15,23,42,.05)}.insight strong{display:block;font-size:14px;color:#1d2939;margin-bottom:8px}.insight span{display:block;color:#667085;font-size:13px;line-height:1.55}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px} .card{background:var(--panel);border:1px solid var(--line);border-radius:26px;padding:20px;min-height:430px;display:flex;flex-direction:column;position:relative;overflow:hidden;box-shadow:0 15px 38px rgba(15,23,42,.06)} .card:before{content:"";position:absolute;inset:-1px;background:radial-gradient(circle at 100% 0%,rgba(37,99,235,.1),transparent 34%);pointer-events:none} .topline{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;position:relative} .badge{font-size:12px;font-weight:900;padding:7px 10px;border-radius:999px;background:#f2f4f7;color:#475467;white-space:nowrap} .badge.urgent{background:#fff1f2;color:#e11d48} .badge.open{background:#ecfdf3;color:#067647} .badge.upcoming{background:#fffaeb;color:#b54708} .badge.closed{background:#f2f4f7;color:#98a2b3} .badge.region{background:#eff6ff;color:#175cd3} .star{border:1px solid var(--line);background:#fff;border-radius:12px;padding:7px 10px;cursor:pointer;font-size:15px} .star.on{background:#fff7cc;border-color:#facc15} .title{font-size:21px;line-height:1.22;letter-spacing:-.04em;margin:16px 0 8px;font-weight:900;position:relative} .org{color:var(--muted);font-size:14px;margin-bottom:16px;position:relative} .score{display:flex;align-items:center;gap:8px;margin:0 0 14px;position:relative;color:#667085;font-size:12px;font-weight:800}.scoreBar{height:8px;flex:1;border-radius:999px;background:#eef2f7;overflow:hidden}.scoreBar i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,#16a34a,#2563eb,#ff3c3c)}.meta{display:grid;gap:9px;margin:0 0 15px;position:relative} .row{display:grid;grid-template-columns:78px 1fr;gap:10px;font-size:14px} .row span:first-child{color:#98a2b3} .row span:last-child{color:#1d2939} .desc{color:#475467;line-height:1.56;font-size:14px;position:relative;margin-bottom:18px} .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;position:relative} .tag{font-size:12px;color:#475467;background:#f8fafc;border:1px solid var(--line);border-radius:999px;padding:6px 8px}.tag.memo{background:#fef3c7;color:#92400e;border-color:#fde68a} .actions{display:flex;gap:8px;margin-top:16px;position:relative} .btn{flex:1;text-align:center;border-radius:14px;padding:12px 10px;font-weight:900;font-size:13px;border:1px solid var(--line);background:#fff;cursor:pointer} .btn.primary{background:#111827;color:#fff;border-color:#111827}
+    .sectionTitle{margin:34px 0 14px;font-size:19px;color:#1d2939;display:flex;align-items:center;gap:10px;letter-spacing:-.02em} .sectionTitle:before{content:"";width:10px;height:10px;border-radius:50%;background:var(--point)} .tableWrap{overflow:auto;border:1px solid var(--line);border-radius:24px;background:#fff;box-shadow:var(--shadow)} table{width:100%;border-collapse:collapse;min-width:980px} th,td{padding:14px 16px;border-bottom:1px solid var(--line);text-align:left;font-size:14px} th{color:#667085;background:#f9fafb;font-size:12px;text-transform:uppercase;letter-spacing:.04em} td{color:#1d2939} .sourceGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px} .sourceBox{background:#fff;border:1px solid var(--line);border-radius:22px;padding:18px;box-shadow:0 12px 28px rgba(15,23,42,.05)} .sourceBox h3{margin:0 0 12px;font-size:16px} .sourceBox ul{margin:0;padding-left:18px;color:#475467;line-height:1.8;font-size:14px} .note,.footer{margin-top:18px;color:#667085;font-size:13px;line-height:1.68} .footer{border:1px dashed #cbd5e1;border-radius:20px;padding:16px;background:#fff} .empty{display:none;border:1px solid var(--line);border-radius:24px;padding:36px;text-align:center;color:var(--muted);background:#fff}.modal{position:fixed;inset:0;background:rgba(17,24,39,.42);display:none;align-items:center;justify-content:center;padding:22px;z-index:20}.modal.open{display:flex}.dialog{width:min(720px,100%);max-height:90vh;overflow:auto;background:#fff;border:1px solid var(--line);border-radius:26px;box-shadow:0 30px 90px rgba(15,23,42,.24);padding:24px}.dialogHead{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}.dialog h2{font-size:28px;letter-spacing:-.04em;line-height:1.15;margin:10px 0}.close{border:1px solid var(--line);background:#fff;border-radius:12px;width:38px;height:38px;font-size:22px;cursor:pointer}.detailGrid{display:grid;grid-template-columns:120px 1fr;gap:10px;margin:18px 0}.detailGrid b{color:#98a2b3;font-size:13px}.detailGrid span{color:#1d2939;font-size:14px;line-height:1.55}.memoBox{width:100%;min-height:110px;border:1px solid var(--line);border-radius:16px;padding:14px;font:inherit;color:#1d2939;resize:vertical;outline:none}.toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%);background:#111827;color:#fff;border-radius:999px;padding:12px 16px;font-size:13px;font-weight:800;box-shadow:0 14px 40px rgba(15,23,42,.25);opacity:0;pointer-events:none;transition:.2s;z-index:30}.toast.show{opacity:1}
+    @media(max-width:1050px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.toolbar{grid-template-columns:1fr}.filters{justify-content:flex-start}.sourceGrid,.insights{grid-template-columns:1fr}} @media(max-width:680px){.grid{grid-template-columns:1fr}.statbox{grid-template-columns:1fr 1fr}.wrap{padding:22px 14px 60px}.card{min-height:auto}.chip{padding:10px 11px}.row{grid-template-columns:68px 1fr}.controls{align-items:stretch}.select,.miniBtn{width:100%}.detailGrid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> Auto-clean · Favorites · Korea/Global · 2026.07.04 seed data</div>
+        <h1>AI 콘텐츠<br/>공모전 레이더</h1>
+        <p class="lead">국내/국외 AI 영상·이미지·광고·아트·솔루션 공모전을 한 곳에서 확인하는 화이트 버전 웹앱입니다. 마감 지난 공고는 기본 화면에서 자동 제외되고, 중요한 공모전은 즐겨찾기로 브라우저에 보관됩니다.</p>
+        <div class="heroActions"><button class="pillbtn" onclick="setFilter('favorite')">★ 즐겨찾기만 보기</button><button class="pillbtn" onclick="downloadJSON()">데이터 JSON 저장</button><button class="pillbtn" onclick="downloadCSV()">CSV 저장</button><button class="pillbtn" onclick="window.print()">인쇄/PDF</button></div>
+      </div>
+      <div class="statbox">
+        <div class="stat"><b id="totalCount">0</b><span>표시 공모전</span></div>
+        <div class="stat"><b id="openCount">0</b><span>접수중</span></div>
+        <div class="stat"><b id="urgentCount">0</b><span>10일 내 마감</span></div>
+        <div class="stat"><b id="favCount">0</b><span>즐겨찾기</span></div>
+      </div>
+    </section>
+
+    <section class="toolbar">
+      <input id="q" class="search" placeholder="공모전명, 주최, 국가, 분야, 제출물 검색" />
+      <div class="filters">
+        <button class="chip active" data-filter="all">전체</button>
+        <button class="chip" data-filter="domestic">국내</button>
+        <button class="chip" data-filter="global">국외</button>
+        <button class="chip" data-filter="open">접수중</button>
+        <button class="chip" data-filter="urgent">마감임박</button>
+        <button class="chip" data-filter="upcoming">곧 시작</button>
+        <button class="chip sub" data-filter="favorite">즐겨찾기</button>
+        <button class="chip sub" data-filter="video">영상/숏폼</button>
+        <button class="chip sub" data-filter="image">이미지/아트</button>
+        <button class="chip sub" data-filter="ad">광고</button>
+        <button class="chip sub" data-filter="solution">솔루션</button>
+        <button class="chip sub" data-filter="student">학생</button>
+      </div>
+    </section>
+    <div class="insights" id="insights"></div>
+    <div class="controls">
+      <label class="switch"><input type="checkbox" id="showClosed"> 마감 지난 정보도 보기</label>
+      <select id="sortBy" class="select" aria-label="정렬 기준">
+        <option value="deadline">마감 빠른순</option>
+        <option value="prize">상금 큰순</option>
+        <option value="score">추천도순</option>
+        <option value="newest">시작일 최신순</option>
+      </select>
+      <button class="miniBtn" onclick="copyFiltered()">현재 목록 복사</button>
+      <span>· 마지막 seed 확인: 2026.07.04 KST</span>
+    </div>
+
+    <div id="cards" class="grid"></div>
+    <div id="empty" class="empty">조건에 맞는 공모전이 없습니다.</div>
+
+    <h2 class="sectionTitle">마감일순 빠른 비교</h2>
+    <div class="tableWrap"><table><thead><tr><th>지역</th><th>마감</th><th>공모전</th><th>주최</th><th>상금</th><th>대상</th><th>핵심 제출물</th><th>상태</th></tr></thead><tbody id="tbody"></tbody></table></div>
+
+    <h2 class="sectionTitle">정보 수집 대상 소스</h2>
+    <div class="sourceGrid" id="sources"></div>
+
+    <p class="note">※ 정적 HTML 웹앱이라 브라우저 단독으로 웹을 크롤링하지는 않습니다. 3시간마다 새 정보 확인 알림 작업을 별도로 설정했고, 새 공모전이 발견되면 이 파일의 <code>contests</code> 데이터에 추가하는 방식으로 업데이트합니다. 공식 제출 전에는 주최사 원문에서 AI 허용 범위, 저작권, 초상권, 생성물 표기, 제출 규격을 반드시 재확인하세요.</p>
+    <div class="footer">업데이트 원칙: ① 주최사 공식 공고 우선 ② 공모전 플랫폼은 보조 검증 ③ 마감일 지난 공고는 기본 화면에서 자동 제외 ④ 즐겨찾기와 메모는 <code>localStorage</code>에 저장되어 파일을 다시 열어도 유지됩니다.</div>
+    <div class="modal" id="modal" onclick="if(event.target.id==='modal') closeDetail()">
+      <div class="dialog">
+        <div class="dialogHead">
+          <div id="modalBadges"></div>
+          <button class="close" onclick="closeDetail()" aria-label="닫기">×</button>
+        </div>
+        <h2 id="modalTitle"></h2>
+        <div class="org" id="modalOrg"></div>
+        <div class="detailGrid" id="modalDetails"></div>
+        <textarea class="memoBox" id="modalMemo" placeholder="준비할 아이디어, 제출 규격, 체크할 점을 적어두세요."></textarea>
+        <div class="actions">
+          <a class="btn primary" id="modalUrl" target="_blank">공고 보기</a>
+          <button class="btn" onclick="saveMemo()">메모 저장</button>
+        </div>
+      </div>
+    </div>
+    <div class="toast" id="toast">저장했습니다</div>
+  </div>
+  <script>
+    const contests = [{"region": "domestic", "country": "KR", "title": "2026 대한민국 미래 철도 AI 영상 공모전", "org": "국가철도공단", "start": "2026-06-15", "end": "2026-07-10", "prize": "총 930만원 · 대상 300만원", "prizeValue": 930, "target": "대한민국 국민 누구나", "output": "생성형 AI 1분 이내 영상", "category": ["video"], "summary": "Rail Future, 상상하라 2050 대한민국 미래 철도. 네이버폼으로 작품 및 신청서 제출.", "url": "https://www.kr.or.kr/boardCnts/list.do?boardID=1100660", "source": "국가철도공단 공식 공고", "priority": false}, {"region": "domestic", "country": "KR", "title": "2026 대한민국 AI 콘텐츠 어워즈 · 경쟁 부문", "org": "경기도 / 경기콘텐츠진흥원", "start": "2026-06-01", "end": "2026-07-12", "prize": "중편 1등 2,000만원 · 단편 1등 800만원 외", "prizeValue": 5600, "target": "만 18세 이상 개인 또는 팀", "output": "생성형 AI 활용 영상 · 중편/단편", "category": ["video"], "summary": "영상 이미지, 음향·음악, 대사·내레이션, 편집·특수효과 중 2개 이상 AI 활용. 영문자막 필수.", "url": "https://filmfreeway.com/KAICA", "source": "FilmFreeway/경기콘텐츠진흥원", "priority": true}, {"region": "domestic", "country": "KR", "title": "2026 대한민국 AI 콘텐츠 어워즈 · 백남준 특별상", "org": "경기도 / 경기콘텐츠진흥원", "start": "2026-06-01", "end": "2026-07-12", "prize": "총 1,100만원 · 1위 800만원", "prizeValue": 1100, "target": "대학생·대학원생·일반인·외국인", "output": "백남준 세계관 재해석 AI 영상", "category": ["video", "art"], "summary": "백남준 서거 20주기 기념. 생성형 AI로 백남준의 삶과 작품 세계를 현대적으로 재해석.", "url": "https://contestkorea.com/sub/view.php?Txt_bcode=031210001&Txt_gbn=1&str_no=202606020010", "source": "콘테스트코리아/경콘진", "priority": false}, {"region": "domestic", "country": "KR", "title": "2026 K-AI 콘텐츠 공모전", "org": "KT그룹 희망나눔재단", "start": "2026-07-01", "end": "2026-07-15", "prize": "총 5,400만원 · 통합대상 1,000만원", "prizeValue": 5400, "target": "초등학생~일반인", "output": "AI 이미지·AI 영상·AI 솔루션 웹/앱", "category": ["video", "image", "solution", "student"], "summary": "우리 곁의 착한 AI, 일상을 바꾸는 상상력. 콘텐츠 부문과 솔루션 부문으로 진행.", "url": "https://k-aiaward.co.kr/", "source": "공식 홈페이지/전자신문", "priority": true}, {"region": "domestic", "country": "KR", "title": "2026 바른 AI·디지털 생활 창작 공모전", "org": "LG헬로비전 / 서울시청자미디어센터 / NIA", "start": "2026-06-15", "end": "2026-07-22", "prize": "총 500만원 · 대상 각 100만원", "prizeValue": 500, "target": "전국 초·중·고등학생", "output": "동영상, 카드뉴스·만화, 포스터", "category": ["video", "image", "student"], "summary": "딥페이크 범죄 예방, 올바른 AI 활용, AI 과의존 예방 등 디지털 역기능 예방 캠페인 콘텐츠.", "url": "https://www.wevity.com/index_university.php?c=find&s=_university&gbn=viewok&gp=3&ix=108303", "source": "위비티/기관 공고", "priority": false}, {"region": "domestic", "country": "KR", "title": "2026 한국전기안전공사 AI영상공모전", "org": "한국전기안전공사", "start": "2026-07-01", "end": "2026-07-26", "prize": "1등 50만원 · 총상금 1천만원 이하", "prizeValue": 50, "target": "누구나 · 개인 또는 4인 이하 팀", "output": "생성형 AI 1분 이내 세로 영상", "category": ["video"], "summary": "AI로 지키는 전기안전. 광고, 드라마, 애니메이션, 뮤직비디오 등 형식 제한 없음.", "url": "https://www.wevity.com/index_university.php?c=find&gbn=viewok&gp=2&ix=108648&s=_university", "source": "위비티/공사 블로그", "priority": false}, {"region": "domestic", "country": "KR", "title": "2026 한국수력원자력 유튜브 짧은영상 공모전", "org": "한국수력원자력", "start": "2026-06-01", "end": "2026-07-30", "prize": "총 2,000만원 · 대상 500만원", "prizeValue": 2000, "target": "개인 · 한수원 직원 제외", "output": "58초 이내 9:16 유튜브 숏폼", "category": ["video"], "summary": "AI 시대, 에너지믹스의 필요성을 대중에게 재미있고 알기 쉽게 표현.", "url": "https://www.khnp.co.kr/main/selectWebEventManageView.do?key=382&ntcobSeq=284", "source": "한국수력원자력 공식 이벤트", "priority": false}, {"region": "domestic", "country": "KR", "title": "코웨이 비렉스 AI 영상 광고·숏폼 공모전", "org": "코웨이 / 스튜디오프리윌루전 / AI-Kive", "start": "2026-07-01", "end": "2026-07-30", "prize": "총 2,000만원 · 종합대상 1,000만원", "prizeValue": 2000, "target": "만 14세 이상 누구나", "output": "AI 영상 광고 30초 또는 숏폼 10초~1분", "category": ["video", "ad"], "summary": "비렉스 침대·안마의자 대상 광고/숏폼. 생성형 AI 활용 영상 제작자 대상.", "url": "https://aikive.com/event/083997de1ae04659ade4e709b8802735", "source": "AI-Kive/위비티", "priority": true}, {"region": "domestic", "country": "KR", "title": "2026 CHAI 대학생 AI 광고 공모전", "org": "차이커뮤니케이션", "start": "2026-07-08", "end": "2026-07-30", "prize": "총 2,300만원 · 대상 500만원", "prizeValue": 2300, "target": "국내외 대학·대학원 재/휴학생", "output": "실제 브랜드 과제 AI 광고 기획/콘텐츠", "category": ["ad", "student"], "summary": "AI로 실제 브랜드 과제를 어떻게 해결할 것인가. 입사 가산점, 실제 상용화 혜택.", "url": "https://aichallenge.artistchai.co.kr/guide", "source": "CHAI 공식 안내", "priority": true}, {"region": "domestic", "country": "KR", "title": "2026년 서울 사랑의열매 AI 영상 공모전", "org": "서울사회복지공동모금회", "start": "2026-06-01", "end": "2026-07-31", "prize": "총 310만원 · 1위 100만원", "prizeValue": 310, "target": "전 국민 · 개인 또는 3인 이하 단체", "output": "3분 영상 또는 60초 이하 쇼츠", "category": ["video"], "summary": "나눔 메시지가 담긴 AI 영상 제작을 통한 기부 문화 조성.", "url": "https://www.contestkorea.com/sub/view.php?Txt_bcode=031210001&Txt_gbn=1&str_no=202605140061", "source": "콘테스트코리아/서울 사랑의열매", "priority": false}, {"region": "domestic", "country": "KR", "title": "2026 ACC 민주·인권·평화 영상(+AI) 콘텐츠 공모전", "org": "국립아시아문화전당", "start": "2026-05-18", "end": "2026-07-31", "prize": "총 2,100만원 · 일반부 대상 500만원", "prizeValue": 2100, "target": "누구나 · 개인 또는 5인 이내 팀", "output": "일반 영상 또는 AI 활용 영상 30초~3분", "category": ["video"], "summary": "민주·인권·평화 가치와 5·18민주화운동 정신 계승을 주제로 한 영상 콘텐츠.", "url": "https://www.acc.go.kr/main/board/board.do?PID=0701&action=Read&boardID=NOTICE&idx=2775", "source": "ACC 공식 공고", "priority": false}, {"region": "domestic", "country": "KR", "title": "상상이 현실이 되는 경남여행 · 경남 관광 AI 홍보 영상 공모전", "org": "경남관광재단", "start": "2026-06-01", "end": "2026-07-31", "prize": "총 650만원 · 대상 300만원", "prizeValue": 650, "target": "누구나", "output": "생성형 AI 활용 경남 관광 홍보 영상", "category": ["video"], "summary": "경남 관광자원을 새롭고 창의적으로 표현한 AI 홍보 숏폼/영상 콘텐츠.", "url": "https://gnto.or.kr/sub04/sub01_01.php?bbsData=bm89MzM3||&mode=view", "source": "경남관광재단/플랫폼", "priority": false}, {"region": "domestic", "country": "KR", "title": "한솔그룹 AI 대학생 숏폼 공모전", "org": "한솔그룹", "start": "2026-06-17", "end": "2026-08-02", "prize": "총 1,400만원 · 대상 500만원", "prizeValue": 1400, "target": "대학생 누구나", "output": "한솔 기술·제품·서비스 AI 숏폼", "category": ["video", "student"], "summary": "일상 속에서 만나는 한솔그룹의 기술·제품·서비스를 AI 콘텐츠로 표현. 수상팀 공채 서류 가산점.", "url": "https://www.aicontesthansol.com/index.html", "source": "공식 홈페이지/링커리어", "priority": true}, {"region": "domestic", "country": "KR", "title": "2026 한국마사회 AI 영상 공모전", "org": "한국마사회", "start": "2026-06-15", "end": "2026-08-15", "prize": "총 1,400만원 · AI Film 대상 500만원", "prizeValue": 1400, "target": "국적·연령·성별 제한 없음", "output": "AI Film 또는 30초 숏폼", "category": ["video"], "summary": "과거·현재·미래를 잇는 馬 이야기. FilmFreeway 출품, ACFM 쇼케이스 상영 특전.", "url": "https://www.contestkorea.com/sub/view.php?Txt_bcode=031210001&Txt_gbn=1&str_no=202606170029", "source": "콘테스트코리아/한국마사회", "priority": false}, {"region": "domestic", "country": "KR", "title": "2026 나는 Solo AI, AI 활용 아이디어 공모전", "org": "부산정보산업진흥원", "start": "2026-07-01", "end": "2026-07-31", "prize": "총 260만원 · 1위 150만원", "prizeValue": 260, "target": "부산·울산·경남 재학·재직·거주자", "output": "AI 활용 아이디어", "category": ["solution"], "summary": "부울경 지역 기반 AI 활용 아이디어 공모. 이메일/온라인 접수.", "url": "https://www.contestkorea.com/sub/view.php?Txt_bcode=030310001&int_gbn=1&str_no=202607020009", "source": "콘테스트코리아", "priority": false}, {"region": "domestic", "country": "KR", "title": "2026 전국 청소년 AI에이전트 코딩 경진대회", "org": "한양미래연구소 / 모두의 문제연구소", "start": "2026-05-22", "end": "2026-07-10", "prize": "1등 100만원 · 총상금 1천만원 이하", "prizeValue": 100, "target": "청소년·대학생", "output": "AI 에이전트 앱/서비스/프로토타입", "category": ["solution", "student"], "summary": "AI 에이전트를 활용한 자유 주제 아이템 개발. 참가비 있음.", "url": "https://ai-coding-2026.pages.dev/", "source": "위비티/대회 페이지", "priority": false}, {"region": "domestic", "country": "KR", "title": "2026 Jeju Global AI Film Contest", "org": "제주 글로벌 AI 필름 콘테스트", "start": "2026-06-15", "end": "2026-07-13", "prize": "공식 페이지 확인 필요", "prizeValue": 0, "target": "국내외 AI 필름 창작자", "output": "AI 활용 영화/영상", "category": ["video", "film"], "summary": "제주를 배경으로 한 글로벌 AI 필름 콘테스트. FilmFreeway 접수, 9월 행사 예정.", "url": "https://filmfreeway.com/2026JejuGlobalAIFilmContest", "source": "FilmFreeway", "priority": false}, {"region": "domestic", "country": "KR", "title": "2026 Gyeongbuk International AI·Metaverse Film Festival", "org": "경북국제AI·메타버스영화제", "start": "2026-03-16", "end": "2026-06-30", "prize": "공식 페이지 확인 필요", "prizeValue": 0, "target": "국내외 AI/메타버스 영상 창작자", "output": "AI Creative Video / 스토리텔링 영상", "category": ["video", "film"], "summary": "정기 접수는 6월 30일 마감. 보관용/지난 공고 확인용으로 데이터에 남기되 기본 화면에서는 자동 제외됩니다.", "url": "https://filmfreeway.com/2026GyeongbukInternationalAIMetaverseFilmFestival", "source": "FilmFreeway", "priority": false}, {"region": "global", "country": "US", "title": "2026 Sparknify Human vs. AI Film Festival", "org": "Sparknify", "start": "2026-02-01", "end": "2026-08-31", "prize": "공식 페이지 확인 필요", "prizeValue": 0, "target": "전 세계 영화 제작자", "output": "Human-made 또는 AI-generated short film", "category": ["video", "film"], "summary": "AI 생성/활용 영화와 인간 제작 영화를 함께 받는 영화제. 9월 26일 이벤트 예정.", "url": "https://filmfreeway.com/humanvsai", "source": "FilmFreeway/Sparknify", "priority": false}, {"region": "global", "country": "UK", "title": "AI London Film Festival", "org": "AI London Film Festival", "start": "2026-06-08", "end": "2026-08-12", "prize": "공식 페이지 확인 필요", "prizeValue": 0, "target": "AI-assisted / AI-generated cinema creators", "output": "AI 보조/생성 영화", "category": ["video", "film"], "summary": "AI 기반 영화제. 조기 마감 7월 15일, 정규 마감 8월 12일, 늦은 마감 9월 9일이 별도 존재.", "url": "https://filmfreeway.com/ailondon", "source": "FilmFreeway", "priority": false}, {"region": "global", "country": "AR", "title": "World AI Film Festival · WAIFF Argentina", "org": "World AI Film Festival", "start": "2026-01-01", "end": "2026-10-30", "prize": "공식 페이지 확인 필요", "prizeValue": 0, "target": "전 세계 AI-driven film creators", "output": "AI-driven films", "category": ["video", "film"], "summary": "각 국가별 AI 영화 5편을 선발해 칸 그랜드 파이널로 이어지는 글로벌 여정의 아르헨티나 에디션.", "url": "https://worldaifilmfestival.com/", "source": "WAIFF 공식 홈페이지", "priority": false}, {"region": "global", "country": "US", "title": "NeurIPS 2026 Creative AI Track", "org": "NeurIPS", "start": "2026-06-30", "end": "2026-08-03", "prize": "학술/전시 트랙 · 상금 미표기", "prizeValue": 0, "target": "AI 연구자·아티스트·디자이너", "output": "Creative AI paper / artwork", "category": ["art", "research", "image"], "summary": "창작 AI 관련 논문과 아트워크를 받는 NeurIPS 공식 Creative AI 트랙. Anywhere on Earth 기준 마감.", "url": "https://neurips.cc/Conferences/2026/CallForCreativeAI", "source": "NeurIPS 공식 Call", "priority": false}, {"region": "global", "country": "US", "title": "GENERATE 2026 AI Art Contest", "org": "Technology Council of Central PA", "start": "2026-01-01", "end": "2026-12-31", "prize": "공식 페이지 확인 필요", "prizeValue": 0, "target": "Artists, designers, AI enthusiasts", "output": "AI tools로 제작한 시각 예술 작품", "category": ["image", "art"], "summary": "AI 도구로 시각적으로 강한 작품을 만드는 AI 아트 콘테스트. 세부 일정은 공식 페이지 기준 재확인 필요.", "url": "https://www.tccp.org/generate2026/", "source": "TCCP 공식 페이지", "priority": false}, {"region": "global", "country": "Global", "title": "AI Art Championship 2026", "org": "AI Art Championship", "start": "2026-01-01", "end": "2026-11-30", "prize": "공식 페이지 확인 필요", "prizeValue": 0, "target": "전 세계 AI 아트 창작자", "output": "AI 아트 작품 제출", "category": ["image", "art"], "summary": "2026년 1월 1일부터 11월 30일까지 참가 작품 제출을 받는 글로벌 AI 아트 챔피언십.", "url": "https://aiartchampionship.com/", "source": "공식 홈페이지", "priority": false}, {"region": "global", "country": "Global", "title": "2026 Earth Partner Prize", "org": "Art Partner / GEF / Re:wild", "start": "2026-06-01", "end": "2026-10-07", "prize": "$10,000 / $5,000 / $2,000 등", "prizeValue": 0, "target": "전 세계 14~30세", "output": "사진, 영화, 패션, 앱, 뉴미디어 등 창작물", "category": ["video", "image", "art", "solution"], "summary": "AI 전용은 아니지만 뉴미디어/앱/영상 등 디지털 창작 제출 가능. 기후 위기 주제의 글로벌 크리에이티브 프라이즈.", "url": "https://www.vogue.com/article/art-partner-unveils-the-2026-earth-partner-prize", "source": "Vogue/공식 발표 기반", "priority": false}, {"region": "global", "country": "US", "title": "Austin AI Film Festival 2026", "org": "Austin AI Film Festival", "start": "2026-01-01", "end": "2026-10-01", "prize": "공식 페이지 확인 필요", "prizeValue": 0, "target": "Generative film creators", "output": "AI 도움을 받은 생성형 영화", "category": ["video", "film"], "summary": "텍사스 오스틴에서 열리는 AI 영화제. 2026년 10월 라이브 이벤트 예정, 마감 세부일은 공식 페이지 확인 필요.", "url": "https://filmfreeway.com/AustinAIFilmFestival", "source": "FilmFreeway", "priority": false}];
+    const sourceGroups = [{"group": "국내 공식/기관", "items": ["주최사 공식 홈페이지", "국가철도공단", "국립아시아문화전당 ACC", "한국수력원자력", "경남관광재단", "KT그룹 희망나눔재단", "차이커뮤니케이션", "코웨이/AI-Kive", "한솔그룹", "한국마사회", "부산정보산업진흥원", "AI Hub/NIA"]}, {"group": "국내 공모전 플랫폼", "items": ["콘테스트코리아", "위비티", "씽유", "올콘", "링커리어", "캠퍼스픽", "요즘것들", "공모전 대외활동 플랫폼", "전자신문/보도자료"]}, {"group": "국외 AI/영화/아트 플랫폼", "items": ["FilmFreeway", "World AI Film Festival", "AI for Good / ITU", "Runway AI Film Festival", "Reply AI Film Festival", "NeurIPS Creative AI", "TCCP GENERATE", "AI Art Championship", "Devpost", "Kaggle", "AIcrowd", "DrivenData", "Challenge.gov", "Hugging Face competitions"]}];
+    const now = new Date();
+    const favKey = 'aiContestRadarFavorites.v2';
+    const memoKey = 'aiContestRadarMemos.v1';
+    let filter = 'all';
+    let activeMemoId = null;
+    const favs = new Set(JSON.parse(localStorage.getItem(favKey) || '[]'));
+    const memos = JSON.parse(localStorage.getItem(memoKey) || '{}');
+    const won = n => n ? (n >= 10000 ? (n/10000).toFixed(1)+'억원' : n.toLocaleString()+'만원') : '미확인';
+    function saveFavs(){ localStorage.setItem(favKey, JSON.stringify([...favs])); }
+    function saveMemos(){ localStorage.setItem(memoKey, JSON.stringify(memos)); }
+    function slug(c){return (c.title+'|'+c.end).replace(/\s+/g,'_')}
+    function esc(v){return String(v ?? '').replace(/[&<>"']/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
+    function statusOf(item){
+      const s = new Date(item.start+'T00:00:00+09:00'); const e = new Date(item.end+'T23:59:59+09:00');
+      if(now < s) return {status:'upcoming', label:'접수 예정', days:Math.ceil((s-now)/86400000)};
+      if(now > e) return {status:'closed', label:'마감', days:Math.ceil((e-now)/86400000)};
+      const left = Math.ceil((e-now)/86400000); return {status:left<=10?'urgent':'open', label:left<=10?`D-${left} 마감임박`:`D-${left} 접수중`, days:left};
+    }
+    function regionLabel(r){return r==='domestic'?'국내':'국외'}
+    function progressOf(item){
+      const s = new Date(item.start+'T00:00:00+09:00'); const e = new Date(item.end+'T23:59:59+09:00');
+      if(now <= s) return 0; if(now >= e) return 100;
+      return Math.max(4, Math.min(100, Math.round(((now-s)/(e-s))*100)));
+    }
+    function topicOf(item){
+      if(item.topic) return item.topic;
+      const firstSentence = item.summary.split(/[.。]/)[0].trim();
+      if(firstSentence.length <= 58) return firstSentence;
+      return firstSentence.slice(0, 56).replace(/\s+\S*$/,'') + '...';
+    }
+    function scoreOf(item){
+      const st = statusOf(item); let score = 35;
+      if(item.priority) score += 24;
+      if(item.prizeValue >= 2000) score += 18; else if(item.prizeValue >= 1000) score += 10; else if(item.prizeValue > 0) score += 4;
+      if(['urgent','open'].includes(st.status)) score += 14; if(st.status === 'upcoming') score += 8; if(st.status === 'closed') score -= 30;
+      if(item.category.includes('student')) score += 4; if(item.category.includes('ad')) score += 3;
+      return Math.max(0, Math.min(100, score));
+    }
+    function matchesFilter(item){
+      const st = statusOf(item).status; const id = slug(item);
+      if(filter==='favorite') return favs.has(id);
+      if(filter==='all') return true; if(filter==='domestic') return item.region==='domestic'; if(filter==='global') return item.region==='global';
+      if(filter==='open') return st==='open'||st==='urgent'; if(filter==='urgent') return st==='urgent'; if(filter==='upcoming') return st==='upcoming';
+      return item.category.includes(filter);
+    }
+    function currentList(){
+      const q = document.getElementById('q').value.trim().toLowerCase(); const showClosed = document.getElementById('showClosed').checked;
+      const sortBy = document.getElementById('sortBy').value;
+      const list = contests.filter(c => showClosed || statusOf(c).status !== 'closed').filter(matchesFilter).filter(c => [c.title,c.org,c.summary,c.output,c.target,c.prize,c.country,c.source,c.category.join(' ')].join(' ').toLowerCase().includes(q));
+      const sorters = {
+        deadline:(a,b)=>new Date(a.end)-new Date(b.end),
+        prize:(a,b)=>b.prizeValue-a.prizeValue || new Date(a.end)-new Date(b.end),
+        score:(a,b)=>scoreOf(b)-scoreOf(a) || new Date(a.end)-new Date(b.end),
+        newest:(a,b)=>new Date(b.start)-new Date(a.start)
+      };
+      return list.sort(sorters[sortBy] || sorters.deadline);
+    }
+    function render(){
+      const list = currentList();
+      document.getElementById('cards').innerHTML = list.map(c=>{
+        const st=statusOf(c); const cls=st.status; const id=slug(c); const on=favs.has(id); const idx=contests.indexOf(c); const progress=progressOf(c); const score=scoreOf(c); const hasMemo=!!memos[id];
+        return `<article class="card"><div class="topline"><div><span class="badge ${cls}">${esc(st.label)}</span> <span class="badge region">${regionLabel(c.region)} · ${esc(c.country)}</span></div><button class="star ${on?'on':''}" onclick="toggleFavByIndex(${idx})">${on?'★':'☆'}</button></div><h3 class="title">${esc(c.title)}</h3><div class="org">${esc(c.org)}</div><div class="score"><span>추천 ${score}</span><div class="scoreBar"><i style="width:${score}%"></i></div></div><div class="score"><span>일정 ${progress}%</span><div class="scoreBar"><i style="width:${progress}%"></i></div></div><div class="meta"><div class="row"><span>일정</span><span>${esc(c.start)} ~ ${esc(c.end)}</span></div><div class="row"><span>주제</span><span>${esc(topicOf(c))}</span></div><div class="row"><span>콘텐츠</span><span>${esc(c.output)}</span></div><div class="row"><span>상금</span><span>${esc(c.prize)}</span></div><div class="row"><span>대상</span><span>${esc(c.target)}</span></div></div><p class="desc">${esc(c.summary)}</p><div class="tags">${c.priority?'<span class="tag">★ 중요 후보</span>':''}${hasMemo?'<span class="tag memo">메모 있음</span>':''}${c.category.map(t=>`<span class="tag">#${esc(t)}</span>`).join('')}<span class="tag">${esc(c.source)}</span></div><div class="actions"><a class="btn primary" target="_blank" href="${esc(c.url)}">공고 보기</a><button class="btn" onclick="openDetail(${idx})">상세</button></div></article>`
+      }).join('');
+      document.getElementById('empty').style.display=list.length?'none':'block';
+      document.getElementById('tbody').innerHTML = list.map(c=>{const st=statusOf(c); return `<tr><td>${regionLabel(c.region)}</td><td>${esc(c.end)}</td><td><a target="_blank" href="${esc(c.url)}">${esc(c.title)}</a></td><td>${esc(c.org)}</td><td>${esc(c.prize)}</td><td>${esc(c.target)}</td><td>${esc(c.output)}</td><td>${esc(st.label)}</td></tr>`}).join('');
+      const visible = contests.filter(c=>document.getElementById('showClosed').checked || statusOf(c).status !== 'closed');
+      document.getElementById('totalCount').textContent = list.length; document.getElementById('openCount').textContent = visible.filter(c=>['open','urgent'].includes(statusOf(c).status)).length; document.getElementById('urgentCount').textContent = visible.filter(c=>statusOf(c).status==='urgent').length; document.getElementById('favCount').textContent = favs.size;
+      renderInsights(list, visible);
+    }
+    function renderInsights(list, visible){
+      const next = visible.filter(c=>['open','urgent','upcoming'].includes(statusOf(c).status)).sort((a,b)=>new Date(a.end)-new Date(b.end))[0];
+      const topPrize = list.filter(c=>c.prizeValue).sort((a,b)=>b.prizeValue-a.prizeValue)[0];
+      const cats = list.flatMap(c=>c.category).reduce((m,x)=>(m[x]=(m[x]||0)+1,m),{});
+      const hotCat = Object.entries(cats).sort((a,b)=>b[1]-a[1])[0];
+      document.getElementById('insights').innerHTML = [
+        `<div class="insight"><strong>다음 체크 포인트</strong><span>${next?`${esc(next.end)} 마감 · ${esc(next.title)}`:'표시할 예정 일정이 없습니다.'}</span></div>`,
+        `<div class="insight"><strong>표시 목록 최고 상금</strong><span>${topPrize?`${won(topPrize.prizeValue)} · ${esc(topPrize.title)}`:'상금 데이터가 아직 부족합니다.'}</span></div>`,
+        `<div class="insight"><strong>가장 많은 분야</strong><span>${hotCat?`#${esc(hotCat[0])} · ${hotCat[1]}건`:'검색 조건을 넓혀보세요.'}</span></div>`
+      ].join('');
+    }
+    function toggleFavByIndex(idx){ const id=slug(contests[idx]); favs.has(id)?favs.delete(id):favs.add(id); saveFavs(); render(); }
+    function setFilter(name){filter=name; document.querySelectorAll('.chip').forEach(b=>b.classList.toggle('active',b.dataset.filter===name)); render();}
+    function downloadJSON(){const blob=new Blob([JSON.stringify(contests,null,2)],{type:'application/json'}); const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='ai-contests-data.json'; a.click(); URL.revokeObjectURL(a.href);}
+    function downloadCSV(){
+      const cols=['region','country','title','org','start','end','prize','target','output','category','summary','url','source'];
+      const rows=currentList().map(c=>cols.map(k=>`"${String(k==='category'?c[k].join('|'):c[k] ?? '').replace(/"/g,'""')}"`).join(','));
+      const csv='\ufeff'+cols.join(',')+'\n'+rows.join('\n');
+      const blob=new Blob([csv],{type:'text/csv;charset=utf-8'}); const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='ai-contests-filtered.csv'; a.click(); URL.revokeObjectURL(a.href);
+    }
+    function copyFiltered(){
+      const text=currentList().map(c=>`${c.end} · ${c.title} · ${c.url}`).join('\n');
+      navigator.clipboard.writeText(text).then(()=>toast('현재 목록을 복사했습니다'));
+    }
+    function openDetail(idx){
+      const c=contests[idx]; const st=statusOf(c); const id=slug(c); activeMemoId=id;
+      document.getElementById('modalBadges').innerHTML=`<span class="badge ${st.status}">${esc(st.label)}</span> <span class="badge region">${regionLabel(c.region)} · ${esc(c.country)}</span>`;
+      document.getElementById('modalTitle').textContent=c.title; document.getElementById('modalOrg').textContent=c.org;
+      document.getElementById('modalDetails').innerHTML=[
+        ['일정',`${c.start} ~ ${c.end}`],['공모 주제',topicOf(c)],['콘텐츠',c.output],['상금',c.prize],['대상',c.target],['추천도',scoreOf(c)+' / 100'],['요약',c.summary],['분야',c.category.map(x=>'#'+x).join(' ')],['출처',c.source]
+      ].map(([k,v])=>`<b>${esc(k)}</b><span>${esc(v)}</span>`).join('');
+      document.getElementById('modalMemo').value=memos[id] || '';
+      document.getElementById('modalUrl').href=c.url;
+      document.getElementById('modal').classList.add('open');
+    }
+    function closeDetail(){document.getElementById('modal').classList.remove('open');}
+    function saveMemo(){if(activeMemoId){memos[activeMemoId]=document.getElementById('modalMemo').value.trim(); saveMemos(); render(); toast('메모를 저장했습니다');}}
+    function toast(msg){const el=document.getElementById('toast'); el.textContent=msg; el.classList.add('show'); clearTimeout(window.toastTimer); window.toastTimer=setTimeout(()=>el.classList.remove('show'),1500);}
+    document.querySelectorAll('.chip').forEach(btn=>btn.addEventListener('click',()=>setFilter(btn.dataset.filter)));
+    document.getElementById('q').addEventListener('input',render); document.getElementById('showClosed').addEventListener('change',render); document.getElementById('sortBy').addEventListener('change',render);
+    document.getElementById('sources').innerHTML = sourceGroups.map(g=>`<div class="sourceBox"><h3>${g.group}</h3><ul>${g.items.map(x=>`<li>${x}</li>`).join('')}</ul></div>`).join('');
+    document.addEventListener('keydown', e=>{if(e.key==='Escape') closeDetail();});
+    render();
+  </script>
+</body>
+</html>
