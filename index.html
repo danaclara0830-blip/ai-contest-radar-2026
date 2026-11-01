@@ -22,7 +22,7 @@
       <div>
         <div class="eyebrow"><span class="dot"></span> 3시간마다 자동 확인 · Korea/Global · 최신 데이터</div>
         <h1>AI 콘텐츠 공모전 레이더</h1>
-        <div class="updateMeta">마지막 업데이트: 2026.11.02 01:01 KST</div>
+        <div class="updateMeta">마지막 업데이트: 2026.11.02 04:04 KST</div>
         <p class="lead">국내/국외 AI 영상·이미지·광고·아트·솔루션 공모전을 한 곳에서 확인하는 화이트 버전 웹앱입니다. 마감 지난 공고는 기본 화면에서 자동 제외되고, 중요한 공모전은 즐겨찾기로 브라우저에 보관됩니다.</p>
         <div class="heroActions"><button class="pillbtn" onclick="setFilter('favorite')">★ 즐겨찾기만 보기</button><button class="pillbtn" onclick="downloadJSON()">데이터 JSON 저장</button><button class="pillbtn" onclick="downloadCSV()">CSV 저장</button><button class="pillbtn" onclick="window.print()">인쇄/PDF</button></div>
       </div>
@@ -102,6 +102,9 @@
     contests.push(
       {region:'global',country:'TR',title:'T-AIFF 2026 · Türkiye International AI Film Festival',org:'T-AIFF · Türkiye International AI Film Festival',start:'2026-06-25',end:'2026-11-01',prize:'부문별 트로피 · 현금상금 미표기',prizeValue:0,target:'전 세계 AI 영화 창작자 · 1인 최대 5편',output:'생성형 AI를 제작 전 과정에 활용한 20분 이하 영화 · FilmFreeway 온라인 제출 · 요청 시 프롬프트·제작과정 정보',category:['video','film','animation','documentary','art','generative-ai'],topic:'생성형 AI로 제작한 단편·애니메이션·다큐멘터리로 영화적 스토리텔링을 선보이기',summary:'T-AIFF 공식 페이지 기준 영화 공모 접수는 6/25~11/1이며, 행사는 12/7~9 이스탄불에서 열립니다. 2025년 1월 1일 이후 완성작만 가능하고, 생성형 AI가 제작 전 과정에 사용되어야 합니다. TV·디지털 플랫폼에 이미 공개된 작품은 불가하며, 비터키어 작품은 터키어·영어 자막이 필요합니다. 상금은 공개되지 않았고 부문별 트로피를 안내합니다. 본 공모는 오늘 마감되는 종료 예정 기록으로 보존합니다.',url:'https://aitff.com/',source:'T-AIFF 공식 홈페이지·공식 규정 직접 확인 2026-11-01 · 6/25~11/1 접수·12/7~9 이스탄불 행사·20분 이하·생성형 AI 전 과정 사용·FilmFreeway 제출 확인',priority:false},
       {region:'global',country:'TR',title:'Turquoise International AI Film Festival 2027',org:'Turquoise AI Film Festival',start:'2026-08-11',end:'2026-12-10',prize:'공식 Festival Laurel 및 Trophy · 현금상금 없음',prizeValue:0,target:'전 세계 영화 제작자·예술가·학생·독립 창작자·제작사·광고 에이전시',output:'AI 시각 제작을 유의미하게 사용한 20분 이하 영화·광고·뮤직비디오 · FilmFreeway 제출',category:['video','film','ad','music','student','art','generative-ai'],topic:'AI가 시각 창작의 핵심인 영화·광고·뮤직비디오로 미래형 영상 언어를 탐구',summary:'FilmFreeway 공식 등록 기준 8/11~12/10 접수, 2027년 1/15~16 앙카라 첫 개최입니다. 국제·터키 국내 AI 영화, 광고, 뮤직비디오 부문을 운영하며, AI는 이미지 생성·애니메이션·VFX 등 시각 제작에서 명확하고 핵심적으로 사용돼야 합니다. 출품료는 국제 부문 €2, 국내 부문 €1이며 현금상금 없이 로렐과 트로피를 수여합니다. 2025년 1월 1일 이후 완성작, 영어 외 언어는 영어 자막이 필요합니다.',url:'https://filmfreeway.com/turquoiseai',source:'Turquoise International AI Film Festival FilmFreeway 공식 등록 직접 확인 2026-11-01 · 8/11~12/10·2027/1/15~16 앙카라·AI 시각 제작 필수·출품료·무현금 시상 확인',priority:false}
+    );
+    contests.push(
+      {region:'domestic',country:'KR',title:'SVAIFF KOREA 2026 · 실리콘밸리 AI 필름페스티벌 코리아',org:'이파크 에이아이(E-Park AI) / 한국AI마케팅연구소',start:'2026-10-25',end:'2026-11-25',prize:'총 3,000만원 · 대상 1,000만원 · 12개 부문 19명(팀) 시상 · 결선 진출 장려상 31명(팀)',prizeValue:3000,target:'국적·나이 제한 없이 개인 또는 팀 · 만19세 미만은 보호자 동의서 필요',output:'MP4(H.264, 권장 1080p, 최대 10GB) 직접 업로드 · AI 영화/애니/다큐 20분 이하, 광고 3분 이하, MV 7분 이하 · AI 활용·창작 설명과 근거 장면 3개 제출',category:['video','film','animation','documentary','ad','music','art','student','generative-ai'],topic:'생성형 AI로 완성한 영화·애니·다큐·광고·뮤직비디오 또는 아리랑 K-컬처 작품을 출품',summary:'SVAIFF KOREA 공식 출품요강 기준 무료 접수이며 11/25 23:59:59 KST에 마감합니다. 화면 또는 핵심 서사 요소의 50% 이상을 AI로 제작·보조해야 하고, 단순 보정·자동 자막만 쓴 작품은 대상이 아닙니다. 대상 1,000만원을 포함해 총 3,000만원을 시상하며 수상작 50편은 2027년 1월 실리콘밸리 글로벌 결선 진출 기회를 받습니다. AI 활용 사실을 시작·엔딩 자막 또는 작품 정보에 표시해야 하며 실존 인물 무단 합성은 금지됩니다.',url:'https://korea.svaiff.com/guide',source:'SVAIFF KOREA 공식 출품요강·공식 뉴스 직접 확인 2026-11-02 · 10/25~11/25 23:59:59 KST·무료·총상금 3,000만원·AI 50% 이상·제출 형식·글로벌 결선 조건 확인',priority:true}
     );
     Object.assign(contests.find(c=>c.title==='The GREAT GenAI Video Creative Challenge 2026'), {
       end:'2026-11-02',
