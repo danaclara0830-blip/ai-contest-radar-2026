@@ -230,6 +230,17 @@
       url:'https://impossiblefilmfest.com/',
       source:'I’Mpossible Film Festival 공식 주최사 페이지·공식 Submission Terms·공식 LinkedIn 공지 직접 확인 2026-11-05 · 7/1~11/5 최종 연장 마감·전 세계·인간 주도/의미 있는 AI 사용·6개 부문·11/24 선정·12/12 수상 발표 확인 · FilmFreeway 마감 시각/출품료/세부 권리 확인 필요', priority:true
     });
+    // 2026-11-05 공식 포털의 연장 공지 반영. storageId는 기존 즐겨찾기·메모 키를 유지한다.
+    contests.filter(c => c.title === 'VIBGYOR AIVerse 2026 · Inter-School AI Video Championship').forEach(c => Object.assign(c, {
+      end:'2026-11-12',
+      prize:'상금·시상 세부 확인 필요 · 11월 14일 공식 Instagram 결과 발표 예정',
+      prizeValue:0,
+      target:'VIBGYOR 및 제휴 학교 7~10학년 학생 · 2인 1조 · 학부모/학생 OTP 동의 필요',
+      output:'주제 중 하나를 선택한 45~60초 AI 릴스 · 9:16 세로 MP4/MOV, 100MB 이하',
+      summary:'VIBGYOR 공식 공모 포털 기준 제출 마감이 2026년 11월 12일 23:59 IST로 연장되어 기존 11월 2일 표기를 보정했습니다. 7~10학년 학생 2인이 생성형 AI로 45~60초 세로 릴스를 제작하며, 결과는 11월 14일 공식 Instagram에 발표 예정입니다. 포털에는 “exciting prizes”만 안내되어 상금 금액·해외 학교 등록 가능 여부·권리 조건은 공식 확인이 필요합니다.',
+      source:'VIBGYOR AIVerse 공식 포털 직접 확인 2026-11-05 · 10/15~11/12 23:59 IST·7~10학년 2인팀·45~60초 9:16 릴스·11/14 Instagram 결과 발표 확인 · 상금·해외 등록·세부 약관 확인 필요',
+      storageId:'VIBGYOR AIVerse 2026 · Inter-School AI Video Championship|2026-11-02'
+    }));
     function saveFavs(){ localStorage.setItem(favKey, JSON.stringify([...favs])); }
     function saveMemos(){ localStorage.setItem(memoKey, JSON.stringify(memos)); }
     function slug(c){return c.storageId || (c.title+'|'+c.end).replace(/\s+/g,'_')}
