@@ -263,6 +263,17 @@
       url:'https://www.smcon.cm/ai-movie/',
       source:'SMCON26 공식 메인·AI Movie Contest 랜딩·공식 2026 안내 직접 확인 2026-11-06 · XAF 1,000,000 상금풀·11/8 deadline·11/13 경쟁·11/14 부에아 결선 표기 확인 · 1~3위 상금 배분/정식 접수일/규정/참가비는 공식 발표 필요', priority:false
     });
+    contests.push({
+      region:'global', country:'SK·CZ', title:'Umelina AI Film Festival Bratislava 2027', org:'Gratex International / Slovak AI Association (ASAI)', start:'2026-11-01', end:'2026-11-30',
+      prize:'7개 부문 트로피 · 현금·상품·전문 혜택은 파트너에 따라 추가될 수 있음', prizeValue:0,
+      target:'슬로바키아 또는 체코 창작자 · 개인 또는 팀 · 1인/팀 최대 3편 · 무료',
+      output:'생성형 AI가 영상의 상당 부분을 만든 작품 · 내러티브 1~10분, 뮤직비디오 1~6분, 광고·브랜디드 15초~3분 또는 마이크로포맷 15초~2분 · FilmFreeway 제출',
+      category:['video','film','shorts','animation','music','ad','brand','art','festival','generative-ai'],
+      topic:'생성형 AI로 만든 영화·뮤직비디오·브랜드 콘텐츠·마이크로 영상을 브라티슬라바 극장 상영에 출품',
+      summary:'Gratex International과 슬로바키아 AI 협회(ASAI)가 주최하는 첫 Umelina AI Film Festival입니다. 2026년 1월 1일 이후 완성한 작품 중 생성형 AI가 영상의 상당 부분을 차지해야 하며, 고전적 편집·사운드·그레이딩·합성은 허용됩니다. 출품작의 AI 도구와 인간·AI 기여를 밝히고 모든 권리를 보유해야 합니다. 최종 후보는 2027년 2월 15일까지, 극장 상영·시상은 3월 6일 브라티슬라바 Edison Filmhub에서 예정되어 있습니다. 현금상금은 확정 표기가 없어 공식 안내를 재확인하세요.',
+      url:'https://filmfreeway.com/Umelina',
+      source:'Umelina 공식 FilmFreeway 접수 페이지 직접 확인 2026-11-06 · 11/1~11/30 무료 접수·슬로바키아/체코 창작자·최대3편·4개 경쟁 부문·2027-03-06 브라티슬라바 상영 확인 · 현금·상품 혜택 및 세부 권리 재확인 필요', priority:true
+    });
     function saveFavs(){ localStorage.setItem(favKey, JSON.stringify([...favs])); }
     function saveMemos(){ localStorage.setItem(memoKey, JSON.stringify(memos)); }
     function slug(c){return c.storageId || (c.title+'|'+c.end).replace(/\s+/g,'_')}
