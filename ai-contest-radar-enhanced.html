@@ -1056,6 +1056,21 @@
         summary:'캐나다 토론토의 첫 Veritas AI Film Festival입니다. AI로 제작한 7분 미만 단편이면 장르 제한 없이 출품할 수 있고, Best Short·Director·Editing·Sound 및 Veritas Award를 시상합니다. 공식 FilmFreeway 페이지상 2026년 11월 30일 마감, 12월 31일 통보, 2027년 2월 20일 Imagine Cinemas Carlton Cinema 상영·행사 예정입니다. 작품 권리와 AI 사용 고지 등 전체 규정은 제출 전 공식 페이지에서 확인하세요.',topic:'AI로 만든 7분 미만 단편영화를 토론토 극장 상영 영화제에 출품',url:'https://filmfreeway.com/VeritasAIFF',source:'Veritas AIFF 공식 FilmFreeway 모집 페이지 직접 확인 2026-11-27 · 11/30 마감·글로벌·7분 미만 AI 영화·USD 9·2027-02-20 토론토 행사 확인',priority:true
       });
     }
+    // 2026-11-27: official organizer pages verified a deadline extension and a newly announced upcoming call.
+    if(!contests.some(c=>c.title==='제1회 CLIIP AI 웹툰 영상화 공모전 2026')){
+      contests.push({
+        region:'domestic',country:'KR',title:'제1회 CLIIP AI 웹툰 영상화 공모전 2026',org:'시원아트 / CLIIP',start:'2026-11-03',end:'2026-12-05',prize:'총 350만원 상당 CLIIP AI 제작 크레딧 · 대상 100만원 상당, 최우수 2명 각 50만원, 우수 5명 각 30만원',prizeValue:350,
+        target:'웹툰 작가·일러스트레이터·AI 영상 제작자 및 일반인 · 개인 또는 팀',output:'본인 창작 또는 적법한 영상화 권리를 확보한 웹툰 원작 기반 30초~3분 AI 애니메이션·모션코믹·뮤직비디오·숏폼 드라마',category:['video','animation','webtoon','music','shorts','art','generative-ai'],
+        summary:'CLIIP의 첫 AI 웹툰 영상화 공모전입니다. 직접 창작했거나 영상화 이용허락을 받은 웹툰 원작을 AI 애니메이션·모션코믹·뮤직비디오·숏폼 드라마로 만들 수 있으며, CLIIP·Veo·Kling·Seedance 등 제작 도구 제한은 없습니다. 주최사 공식 페이지가 기존 11월 30일 안내보다 연장된 12월 5일 마감을 표시합니다. 상금은 현금이 아닌 CLIIP 전용 제작 크레딧으로 3개월에 걸쳐 지급됩니다.',topic:'나만의 웹툰 원작·캐릭터·세계관을 30초~3분 AI 애니메이션 또는 영상 콘텐츠로 구현',url:'https://cliip.co.kr/webtoon/home#submit',source:'CLIIP 공식 웹툰 페이지 직접 확인 2026-11-27 · 공식 상단 공지의 12/05 마감 연장 및 제작·제출 화면 확인; 위비티 상세로 원작 권리·30초~3분·총 350만원 상당 크레딧·도구 자유 조건 교차 확인',priority:true
+      });
+    }
+    if(!contests.some(c=>c.title==='2026–27 스토리리그 AI 영상 예고편 공모전')){
+      contests.push({
+        region:'domestic',country:'KR',title:'2026–27 스토리리그 AI 영상 예고편 공모전',org:'TNJ INTERNATIONAL / STORY LEAGUE · 후원 KNN Media Plus·곰앤컴퍼니',start:'2026-11-30',end:'2027-01-30',prize:'총상금 400만원 · 대상 200만원, 최우수 스토리상 100만원, 2개 부문 각 50만원',prizeValue:400,
+        target:'만 14세 이상 전 세계 누구나 · 개인 또는 팀 · 개인/팀당 1편',output:'생성형 AI를 일부 또는 전체에 활용한 2분 이내 오리지널 스토리 영상 예고편 · MP4(H.264) 권장, 최대 1GB',category:['video','film','shorts','student','art','generative-ai'],
+        summary:'STORY LEAGUE SEASON 0는 AI로 자신만의 이야기를 2분 이내 예고편으로 표현하는 국제 공모전입니다. AI 도구·플랫폼 제한 없이 실사와 AI 영상을 혼합할 수 있으며, 접수 시점에 외부 공개되지 않은 작품이어야 합니다. 한국어·영어·베트남어 작품을 받고, 영어·베트남어 작품에는 한국어 또는 영어 자막이 필요합니다. 공식 신청 링크는 11월 30일에 공개될 예정입니다.',topic:'장르 제한 없이 나만의 오리지널 이야기를 2분 이내 AI 영상 예고편으로 제작',url:'https://storyleague.co.kr/',source:'STORY LEAGUE 공식 사이트 직접 확인 2026-11-27 · 11/30~2027/01/30 23:59 KST·총 400만원·14세 이상 글로벌·2분 이내·AI 도구 자유·공식 신청 링크 11/30 공개 예정 확인',priority:true
+      });
+    }
     const aiffa = contests.find(c=>c.title==='AI Film Festival Africa 2026 · AIFFA');
     if(aiffa){
       aiffa.end='2026-11-30';
