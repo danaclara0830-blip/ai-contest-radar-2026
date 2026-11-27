@@ -1041,6 +1041,28 @@
       oneBillionAward.source='1 Billion Followers Summit 공식 Award·Terms 페이지 직접 재확인 2026-11-26 · 9/30~12/05(기존 11/20에서 연장)·글로벌 18+·무료·Seedance 70% 이상·USD 100만 대상 확인';
       oneBillionAward.priority=true;
     }
+    // 2026-11-27: official creator-platform and FilmFreeway listings verified.
+    if(!contests.some(c=>c.title==='Kling Image 4.0 8K Creative Challenge 2026')){
+      contests.push({
+        region:'global',country:'글로벌',title:'Kling Image 4.0 8K Creative Challenge 2026',org:'Kling AI',start:'2026-11-17',end:'2026-12-03',prize:'크레딧 총 135명 · 1등 5명 각 16,000 Credits, 2등 10명 각 3,500, 3등 30명 각 1,000, HM 50명 각 330 + SNS 조회수 성과 보상·최대 USD $500 보너스',prizeValue:500,
+        target:'Kling AI 사용자 · 현금 보상은 Kling 파트너·벤더·제휴사가 아닌 독립 크리에이터 대상',output:'Kling Image 4.0으로 만든 이미지 또는 720p 이상 숏필름 · Kling 이벤트 페이지 제출, 현금 보상은 TikTok·X·Instagram·YouTube 공개 게시 및 폼 링크 제출',category:['image','video','shorts','art','ad','social','generative-ai'],
+        summary:'Kling AI의 공식 Image 4.0 8K 크리에이티브 챌린지입니다. 인물·포스터·광고·시네마틱 콘셉트아트 등 이미지와 720p 이상 숏필름을 출품할 수 있습니다. 크레딧상은 이벤트 페이지 제출만으로, 현금 보상은 Kling 워터마크와 #KlingAI #KlingImage4 #8KCreativeChallenge를 포함한 SNS 공개 게시 및 Google Form 링크 제출까지 해야 대상이 됩니다. 동일 작품은 다른 Kling 이벤트의 현금 보상과 중복 수령할 수 없습니다.',topic:'Kling Image 4.0의 8K 이미지·숏필름으로 시각적 상상력과 기술 완성도를 보여주기',url:'https://kling.ai/app/activity-zone?id=951146223321362494',source:'Kling AI 공식 Activity Zone 직접 확인 2026-11-27 · 11/17 07:00~12/03 07:59 UTC-8·SNS 게시/해시태그·크레딧 135명·최대 $500 보너스 확인',priority:true
+      });
+    }
+    if(!contests.some(c=>c.title==='Veritas AI Film Festival 2027')){
+      contests.push({
+        region:'global',country:'CA',title:'Veritas AI Film Festival 2027',org:'Veritas AIFF',start:'2026-02-20',end:'2026-11-30',prize:'Best Short·Director·Editing·Sound·Veritas Award · 현금상금 미표기',prizeValue:0,
+        target:'전 세계 AI 영화 창작자 · FilmFreeway 일반·학생 USD $9, Gold 회원 USD $8',output:'AI로 제작한 7분 미만 단편영화 · 장르 제한 없음 · FilmFreeway 제출',category:['video','film','shorts','art','student','generative-ai'],
+        summary:'캐나다 토론토의 첫 Veritas AI Film Festival입니다. AI로 제작한 7분 미만 단편이면 장르 제한 없이 출품할 수 있고, Best Short·Director·Editing·Sound 및 Veritas Award를 시상합니다. 공식 FilmFreeway 페이지상 2026년 11월 30일 마감, 12월 31일 통보, 2027년 2월 20일 Imagine Cinemas Carlton Cinema 상영·행사 예정입니다. 작품 권리와 AI 사용 고지 등 전체 규정은 제출 전 공식 페이지에서 확인하세요.',topic:'AI로 만든 7분 미만 단편영화를 토론토 극장 상영 영화제에 출품',url:'https://filmfreeway.com/VeritasAIFF',source:'Veritas AIFF 공식 FilmFreeway 모집 페이지 직접 확인 2026-11-27 · 11/30 마감·글로벌·7분 미만 AI 영화·USD 9·2027-02-20 토론토 행사 확인',priority:true
+      });
+    }
+    const aiffa = contests.find(c=>c.title==='AI Film Festival Africa 2026 · AIFFA');
+    if(aiffa){
+      aiffa.end='2026-11-30';
+      aiffa.summary='LeCinema의 AI Film Festival Africa 2026 공식 모집은 AI가 창작 과정에서 중심 역할을 한 15분 이하 작품을 받습니다. 아프리카 거주 여부와 관계없이 아프리카의 사람·문화·미래를 다뤄야 하며, 영어 대사 또는 영어 자막이 필요합니다. 공개 YouTube 영상에 #SpecialForLeCinema와 @lecinemafilms를 표기해 링크를 제출해야 합니다. Best AI Film·Africa 2063 Award·Audience Choice를 시상하되 현금 상금은 미공개입니다.';
+      aiffa.source='AI Film Festival Africa/LeCinema 공식 모집 페이지 및 공식 FilmFreeway 최신 일정 재확인 2026-11-27 · 11/30 마감·무료·15분 이하·YouTube 공개 제출·Africa 2063 주제 확인';
+      aiffa.priority=true;
+    }
     render();
   </script>
 </body>
