@@ -1178,6 +1178,14 @@
       siadaff.source='SIADAFF 공식 홈페이지 일정·출품 가이드라인 직접 재확인 2026-11-28 · 접수 2026-10-10~2027-01-07 23:59 KST로 연장·히든코리아 주제·총 현금상금 160만원·2027-01-08 시상 확인';
       siadaff.priority=true;
     }
+    // 2026-11-28: organizer announcement confirms the upcoming Newtake video call.
+    if(!contests.some(c=>c.title==='뉴테이크 AI 영상 공모전 · NEW TAKE ON AI 2026')){
+      contests.push({
+        region:'domestic',country:'KR',title:'뉴테이크 AI 영상 공모전 · NEW TAKE ON AI 2026',org:'뉴테이크(Newtake) / AI-Kive',start:'2026-12-07',end:'2027-01-05',prize:'총 5,024만원 상당 · 통합 대상 2,000만원 상당(현금 1,000만원+크레딧 1,000만원 상당) · 부문별 최우수·우수 및 Newtake Pick 16팀',prizeValue:5024,
+        target:'만 14세 이상 누구나 · 개인 또는 팀 · PASS 본인인증 필수',output:'생성형 AI 활용 MP4 영상 · FHD(1080p) 이상·2GB 이하 · AI 스토리텔링(단편영화·드라마/숏드라마) 또는 AI 광고(브랜드 필름/숏폼 광고), 하위 부문별 1편씩 최대 4편',category:['video','film','shorts','ad','brand','story','generative-ai'],
+        summary:'뉴테이크가 AI 스토리텔링과 AI 광고 두 축에서 여는 영상 공모전입니다. 생성형 AI 활용과 주요 도구 기재가 필수이며, 개인·팀별로 각 하위 부문 1편씩 최대 4편을 출품할 수 있습니다. 통합 대상은 현금 1,000만원과 뉴테이크 크레딧 1,000만원 상당으로 구성됩니다. 공식 Event 상세 페이지의 제출 절차·권리·정확한 마감 시간은 접수 시작 전 다시 확인하세요.',topic:'생성형 AI로 자신만의 단편·숏드라마 또는 뉴테이크 창작 경험을 담은 브랜드·숏폼 광고를 제작',url:'https://aikive.com/community/announcement/01a20c9c1633742fa08e26a19ec4bfd5',source:'AI-Kive/뉴테이크 공식 공지 직접 확인 2026-11-28 · 2026-12-07~2027-01-05 23:59·만14세 이상·생성형 AI/도구 기재·FHD/2GB·총 5,024만원 상당 확인 · Event 상세 제출·권리 규정 확인 필요',priority:true
+      });
+    }
     render();
   </script>
 </body>
